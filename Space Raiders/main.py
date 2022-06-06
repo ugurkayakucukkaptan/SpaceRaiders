@@ -1,6 +1,7 @@
 import os
 import random
 import pygame
+from pygame import mixer
 
 pygame.font.init()
 
@@ -155,6 +156,10 @@ def main():
     lives = 3
     main_font = pygame.font.SysFont("comicsans", 60)
     lost_font = pygame.font.SysFont("comicsans", 60)
+
+    pygame.mixer.init()
+    mixer.music.load(os.path.join("assets","background.wav"))
+    mixer.music.play(-1)
 
     enemies = []
     wave_length = 8
